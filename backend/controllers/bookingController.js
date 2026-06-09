@@ -3,11 +3,12 @@ const { sendStatusEmail } = require('../services/emailService');
 
 const createBooking = async (req, res) => {
   try {
-    const { date, time, name, fatherName, age, contactNumber, email } = req.body;
+    const { date, time, service, name, fatherName, age, contactNumber, email } = req.body;
 
     const newBooking = new Booking({
       date,
       time,
+      service,
       name,
       fatherName,
       age,

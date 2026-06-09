@@ -57,6 +57,9 @@ function getFirstDayOfMonth(year, month) {
       const [selectedType, setSelectedType] = useState("discovery");
       const [selectedSlot, setSelectedSlot] = useState("10:00 AM");
       const [selectedDay, setSelectedDay] = useState(15);
+
+      const [showModal, setShowModal] = useState(false);
+      const [formData, setFormData] = useState({ name: '', fatherName: '', age: '', email: '', contact: '', message: '' });
     
       const today = new Date();
       const [viewYear, setViewYear] = useState(2025);
@@ -80,6 +83,50 @@ function getFirstDayOfMonth(year, month) {
     
       const dayNames = ["Thu","Mon","Tue","Wed","Thu","Fri","Sat","Sun","Mon","Tue","Wed","Thu","Fri","Sat","Sun","Thu","Mon","Tue","Wed","Thu","Fri","Sat","Sun","Mon","Tue","Wed","Thu","Fri","Sat","Sun","Thu"];
     
+      const handleProceed = () => {
+        if (selectedSlot && selectedType) {
+          setShowModal(true);
+        }
+      };
+
+      const handleBookingSubmit = async (e) => {
+        e.preventDefault();
+        
+        try {
+          const serviceTitle = consultationTypes.find(t => t.id === selectedType)?.title || selectedType;
+          
+          const response = await fetch('http://localhost:5000/api/bookings', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              service: serviceTitle,
+              date: `${MONTHS[viewMonth]} ${selectedDay}, ${viewYear}`,
+              time: selectedSlot,
+              name: formData.name,
+              fatherName: formData.fatherName,
+              age: formData.age,
+              email: formData.email,
+              contactNumber: formData.contact,
+              message: formData.message
+            })
+          });
+          
+          const data = await response.json();
+          if (data.success) {
+            setShowModal(false);
+            alert("Booking request submitted successfully! An admin will review it shortly.");
+            setFormData({ name: '', fatherName: '', age: '', email: '', contact: '', message: '' });
+          } else {
+            alert("Failed to submit booking: " + data.message);
+          }
+        } catch (error) {
+          console.error("Error submitting booking:", error);
+          alert("An error occurred while submitting your booking.");
+        }
+      };
+
   return (
         <>
            <section className="bg-[#020B18] py-16 px-6">
@@ -220,16 +267,120 @@ function getFirstDayOfMonth(year, month) {
                           </button>
                         ))}
                       </div>
-                      <p className="text-gray-500 text-[10px] mt-4 leading-relaxed">
+                      <p className="text-gray-500 text-[10px] mt-4 leading-relaxed mb-4">
                         Can't find a suitable time?{" "}
                         <span className="text-[#00D4AA] cursor-pointer hover:underline">Contact us</span>{" "}
                         and we'll arrange for you.
                       </p>
+                      
+                      <button 
+                        onClick={handleProceed}
+                        className="w-full py-3 mt-2 bg-[#00D4AA] text-black font-bold rounded-xl hover:bg-[#00e6b8] transition-colors shadow-[0_0_15px_rgba(0,212,170,0.3)] disabled:opacity-50 disabled:cursor-not-allowed"
+                        disabled={!selectedSlot}
+                      >
+                        Proceed to Book
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
             </section>
+         
+            {/* Booking Form Modal */}
+            {showModal && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+                <div className="bg-[#0D1B2A] border border-white/10 rounded-2xl w-full max-w-md max-h-[90vh] flex flex-col shadow-2xl relative">
+                  <div className="p-6 border-b border-white/10 shrink-0">
+                    <h3 className="text-xl font-bold text-white">Complete Your Booking</h3>
+                    <p className="text-sm text-gray-400 mt-1">
+                      {consultationTypes.find(t => t.id === selectedType)?.title} on {MONTHS[viewMonth]} {selectedDay}, {viewYear} at {selectedSlot}
+                    </p>
+                    <button 
+                      onClick={() => setShowModal(false)}
+                      className="absolute top-6 right-6 text-gray-400 hover:text-white"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                  
+                  <form onSubmit={handleBookingSubmit} className="p-6 space-y-4 text-left overflow-y-auto">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
+                      <input 
+                        type="text" 
+                        required
+                        value={formData.name}
+                        onChange={(e) => setFormData({...formData, name: e.target.value})}
+                        className="w-full bg-[#020B18] border border-white/10 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#00D4AA]"
+                        placeholder="John Doe"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-300 mb-1">Father's Name</label>
+                      <input 
+                        type="text" 
+                        required
+                        value={formData.fatherName}
+                        onChange={(e) => setFormData({...formData, fatherName: e.target.value})}
+                        className="w-full bg-[#020B18] border border-white/10 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#00D4AA]"
+                        placeholder="Father's Name"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-300 mb-1">Age</label>
+                      <input 
+                        type="number" 
+                        required
+                        min="1"
+                        value={formData.age}
+                        onChange={(e) => setFormData({...formData, age: e.target.value})}
+                        className="w-full bg-[#020B18] border border-white/10 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#00D4AA]"
+                        placeholder="25"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+                      <input 
+                        type="email" 
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                        className="w-full bg-[#020B18] border border-white/10 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#00D4AA]"
+                        placeholder="john@example.com"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-300 mb-1">Contact Number</label>
+                      <input 
+                        type="tel" 
+                        required
+                        value={formData.contact}
+                        onChange={(e) => setFormData({...formData, contact: e.target.value})}
+                        className="w-full bg-[#020B18] border border-white/10 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#00D4AA]"
+                        placeholder="+1 234 567 8900"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-300 mb-1">Additional Message (Optional)</label>
+                      <textarea 
+                        value={formData.message}
+                        onChange={(e) => setFormData({...formData, message: e.target.value})}
+                        className="w-full bg-[#020B18] border border-white/10 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#00D4AA] h-24 resize-none"
+                        placeholder="Tell us a bit about what you'd like to discuss..."
+                      />
+                    </div>
+                    <div className="pt-2">
+                      <button 
+                        type="submit"
+                        className="w-full py-3 bg-[#00D4AA] text-black font-bold rounded-xl hover:bg-[#00e6b8] transition-colors"
+                      >
+                        Confirm Booking
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            )}
          
         </>
   )
