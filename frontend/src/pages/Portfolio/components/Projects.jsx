@@ -1,6 +1,5 @@
 import { Card } from '@heroui/react';
-import React, { useState } from 'react'
-
+import React, { useState } from 'react';
 
 const filterTabs = [
   "All Projects",
@@ -12,7 +11,6 @@ const filterTabs = [
   "Cloud Solutions",
 ];
 
-
 const projects = [
   {
     id: 1,
@@ -21,8 +19,8 @@ const projects = [
     title: "FinTrack – Finance Management",
     desc: "A comprehensive financial management platform for businesses to track, analyze and optimize their financial operations.",
     category: "SaaS Solutions",
-    img: "📊",
-    imgBg: "from-purple-900 to-blue-900",
+    img: "https://plus.unsplash.com/premium_photo-1664478157873-50d4963c1d11?q=80&w=1169&auto=format&fit=crop",
+    imgBg: "from-purple-900/30 to-purple-950/10"
   },
   {
     id: 2,
@@ -31,8 +29,8 @@ const projects = [
     title: "MediCare+ – Hospital Management",
     desc: "Complete hospital management system for appointment scheduling, patient records, billing and reporting.",
     category: "Web Development",
-    img: "🏥",
-    imgBg: "from-teal-900 to-cyan-900",
+    img: "https://images.unsplash.com/photo-1666214277657-e60f05c40b04?q=80&w=1170&auto=format&fit=crop",
+    imgBg: "from-teal-900/30 to-teal-950/10"
   },
   {
     id: 3,
@@ -41,8 +39,8 @@ const projects = [
     title: "ShopEase – Online Marketplace",
     desc: "Full-featured e-commerce marketplace with multi-vendor support, secure payments and advanced analytics.",
     category: "Web Development",
-    img: "🛒",
-    imgBg: "from-orange-900 to-red-900",
+    img: "https://plus.unsplash.com/premium_photo-1681488262364-8aeb1b6aac56?q=80&w=1170&auto=format&fit=crop",
+    imgBg: "from-orange-900/30 to-orange-950/10"
   },
   {
     id: 4,
@@ -51,8 +49,8 @@ const projects = [
     title: "SalonIQ – Salon Management",
     desc: "Mobile app for salon owners to manage appointments, staff, services, inventory and customer loyalty programs.",
     category: "Mobile Apps",
-    img: "💇",
-    imgBg: "from-pink-900 to-rose-900",
+    img: "https://plus.unsplash.com/premium_photo-1664301489002-2fed4596c101?w=600&auto=format&fit=crop",
+    imgBg: "from-pink-900/30 to-pink-950/10"
   },
   {
     id: 5,
@@ -61,8 +59,8 @@ const projects = [
     title: "EstatePro – Property Platform",
     desc: "Real estate platform for property listing, customer management, inquiries and advanced search.",
     category: "Web Development",
-    img: "🏠",
-    imgBg: "from-green-900 to-emerald-900",
+    img: "https://images.unsplash.com/photo-1532938811297-d6747067a6b7?q=80&w=1170&auto=format&fit=crop",
+    imgBg: "from-green-900/30 to-green-950/10"
   },
   {
     id: 6,
@@ -71,8 +69,8 @@ const projects = [
     title: "LearnHub – E-Learning Platform",
     desc: "E-learning platform with interactive courses, live classes, assessments and progress tracking.",
     category: "Web Development",
-    img: "🎓",
-    imgBg: "from-blue-900 to-indigo-900",
+    img: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=1074&auto=format&fit=crop",
+    imgBg: "from-blue-900/30 to-blue-950/10"
   },
   {
     id: 7,
@@ -81,8 +79,8 @@ const projects = [
     title: "AI Document Intelligence",
     desc: "AI-powered document processing solution that extracts, classifies and analyzes data with high accuracy.",
     category: "AI & Automation",
-    img: "🤖",
-    imgBg: "from-violet-900 to-purple-900",
+    img: "https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?q=80&w=1332&auto=format&fit=crop",
+    imgBg: "from-violet-900/30 to-violet-950/10"
   },
   {
     id: 8,
@@ -91,13 +89,12 @@ const projects = [
     title: "BizCore – ERP System",
     desc: "Enterprise resource planning system that streamlines operations, finance, HR, inventory and reporting.",
     category: "Enterprise Solutions",
-    img: "🏢",
-    imgBg: "from-cyan-900 to-slate-900",
+    img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1170&auto=format&fit=crop",
+    imgBg: "from-cyan-900/30 to-cyan-950/10"
   },
 ];
 
 const Projects = () => {
-
   const [activeFilter, setActiveFilter] = useState("All Projects");
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -105,16 +102,19 @@ const Projects = () => {
     activeFilter === "All Projects"
       ? projects
       : projects.filter((p) => p.category === activeFilter);
+
   return (
-<>
-<section className="bg-[#020B18] py-16 px-6">
+    <section className="bg-[#020B18] py-16 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Filter tabs */}
         <div className="flex flex-wrap gap-2 mb-10 items-center">
           {filterTabs.map((tab) => (
             <button
               key={tab}
-              onClick={() => { setActiveFilter(tab); setCurrentPage(1); }}
+              onClick={() => {
+                setActiveFilter(tab);
+                setCurrentPage(1);
+              }}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                 activeFilter === tab
                   ? "bg-[#00D4AA] text-black"
@@ -141,12 +141,20 @@ const Projects = () => {
               className="bg-[#0D1B2A] border border-white/10 hover:border-[#00D4AA]/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#00D4AA]/5 transition-all duration-300 group overflow-hidden"
             >
               {/* Project image area */}
-              <div className={`bg-gradient-to-br ${project.imgBg} h-36 flex items-center justify-center relative overflow-hidden`}>
-                <span className="text-5xl opacity-60 group-hover:scale-110 transition-transform duration-300">
-                  {project.img}
-                </span>
+              <div
+                className={`bg-gradient-to-br ${
+                  project.imgBg || "from-gray-800 to-gray-900"
+                } h-36 flex items-center justify-center relative overflow-hidden`}
+              >
+                <img
+                  src={project.img}
+                  alt={project.title}
+                  className="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-300"
+                />
                 {/* Badge */}
-                <div className={`absolute top-3 left-3 ${project.badgeColor} text-white text-[10px] font-bold px-2 py-1 rounded-full`}>
+                <div
+                  className={`absolute top-3 left-3 ${project.badgeColor} text-white text-[10px] font-bold px-2 py-1 rounded-full`}
+                >
                   {project.badge}
                 </div>
               </div>
@@ -166,30 +174,10 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Pagination */}
-        <div className="flex justify-center gap-2 mt-10">
-          {[1, 2, 3].map((p) => (
-            <button
-              key={p}
-              onClick={() => setCurrentPage(p)}
-              className={`w-9 h-9 rounded-full text-sm font-semibold transition-all ${
-                currentPage === p
-                  ? "bg-[#00D4AA] text-black"
-                  : "bg-[#0D1B2A] text-gray-400 border border-white/10 hover:border-[#00D4AA]/40"
-              }`}
-            >
-              {p}
-            </button>
-          ))}
-          <button className="w-9 h-9 rounded-full bg-[#0D1B2A] text-gray-400 border border-white/10 hover:border-[#00D4AA]/40 text-sm">
-            →
-          </button>
-        </div>
+       
       </div>
     </section>
-</>
+  );
+};
 
-)
-}
-
-export default Projects
+export default Projects;

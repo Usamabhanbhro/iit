@@ -13,39 +13,45 @@ const processSteps = [
 
 const Process = () => {
   return (
-<>
-    <section className="bg-gray-50 py-20 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-14">
-          <p className="text-[#00D4AA] text-sm font-semibold uppercase tracking-widest mb-2">
-            Our Development Process
-          </p>
-          <h2 className="text-gray-900 text-3xl md:text-4xl font-bold">
-            A Proven Process That Ensures Success
-          </h2>
-        </div>
+    <>
+      <section className="bg-gray-50 py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-[#00D4AA] text-sm font-semibold uppercase tracking-widest mb-2">
+              Our Development Process
+            </p>
+            <h2 className="text-gray-900 text-3xl md:text-4xl font-bold">
+              A Proven Process That Ensures Success
+            </h2>
+          </div>
 
-        {/* Steps row */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4">
-          {processSteps.map((step, i) => (
-            <div key={step.num} className="flex flex-col items-center text-center relative">
-              {/* Connector line (not last) */}
-              {i < processSteps.length - 1 && (
-                <div className="hidden lg:block absolute top-6 left-[calc(50%+20px)] w-full h-[2px] bg-[#00D4AA]/30 z-0" />
-              )}
-              <div className="relative z-10 w-12 h-12 rounded-full border-2 border-[#00D4AA] bg-white flex items-center justify-center mb-3">
-                <span className="text-[#00D4AA] text-lg">◇</span>
-              </div>
-              <p className="text-[#00D4AA] text-xs font-bold mb-1">{step.num}</p>
-              <p className="text-gray-900 font-semibold text-sm mb-1">{step.title}</p>
-              <p className="text-gray-500 text-xs leading-relaxed">{step.desc}</p>
-            </div>
-          ))}
+          {/* Steps row */}
+          {/* Process Steps with Arrows */}
+          <div className="flex flex-col lg:flex-row lg:flex-wrap items-center justify-center gap-6 lg:gap-2">
+            {processSteps.map((step, i) => (
+              <React.Fragment key={step.num}>
+                {/* Step card */}
+                <div className="flex flex-col items-center text-center w-40 sm:w-48">
+                  <div className="relative z-10 w-12 h-12 rounded-full border-2 border-[#00D4AA] bg-white flex items-center justify-center mb-3">
+                    <span className="text-[#00D4AA] text-lg font-bold">{step.num}</span>
+                  </div>
+                  <p className="text-gray-900 font-semibold text-sm mb-1">{step.title}</p>
+                  <p className="text-gray-500 text-xs leading-relaxed">{step.desc}</p>
+                </div>
+
+                {/* Arrow between steps (except after last) */}
+                {i < processSteps.length - 1 && (
+                  <div className="hidden lg:flex items-center text-[#00D4AA] text-5xl font-bold mx-1">
+                    →
+                  </div>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-</>
-)
+      </section>
+    </>
+  )
 }
 
 export default Process

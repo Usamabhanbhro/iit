@@ -1,10 +1,10 @@
 import { Link } from "@heroui/react";
 
-const Footer = () => {
+const Footer = () => { 
   return (
     <footer className="bg-[#020B18] text-gray-300 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div>
             <p className="font-bold text-2xl text-white mb-4">Technify</p>
             <p className="text-gray-400 text-sm">

@@ -28,13 +28,13 @@ const CTA = () => {
               className="border-white/30 text-white px-5 py-4 border rounded-full hover:bg-white/10"
               size="md"
             >
-              📞 Call 0222678253
+              Call 0222678253
             </Button>
             <Button
-              className="bg-green-600 text-white px-5 py-4 rounded-full hover:bg-green-700"
+              className="bg-green-600 text-white px-5 py-4 font-semibold rounded-full hover:bg-green-700"
               size="md"
             >
-              💬 WhatsApp
+             WhatsApp
             </Button>
           </div>
         </div>

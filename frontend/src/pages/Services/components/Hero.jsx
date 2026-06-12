@@ -24,7 +24,7 @@ const Hero = () => {
           </p>
           <div className="flex flex-wrap gap-4">
             <Button
-              className="bg-gradient-to-r from-cyan-400 to-purple-600 text-black font-semibold px-6 py-4 rounded-full hover:brightness-110 transition"
+              className="bg-gradient-to-r from-cyan-400 to-purple-600 text-white font-semibold px-6 py-4 rounded-full hover:brightness-110 transition"
               size="lg"
             >
               Schedule Free Consultation
@@ -34,35 +34,45 @@ const Hero = () => {
               className="border-white/30 text-white px-6 py-4 border rounded-full hover:bg-white/10 transition"
               size="lg"
             >
-              ▶ View Our Work
+              View Our Work
             </Button>
           </div>
         </div>
 
-        {/* Right – diagram */}
+        {/* Right – themed image with overlay and info nodes */}
         <div className="flex justify-center">
-          <div className="relative w-72 h-72">
-            {/* Center box */}
-            <div className="absolute inset-0 m-auto w-36 h-16 bg-[#0D1B2A] border border-[#00D4AA]/40 rounded-xl flex items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-              <span className="text-white text-xs font-bold text-center leading-tight">
+          <div className="relative w-full max-w-md md:max-w-lg h-72 md:h-96 rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="https://images.pexels.com/photos/34803972/pexels-photo-34803972.jpeg"
+              alt="Team collaborating on technology"
+              className="absolute inset-0 w-full h-full object-cover transform scale-105 transition-transform duration-700 hover:scale-100 mix-blend-overlay opacity-90"
+            />
+
+            {/* Gradient overlay to blend image with theme */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#020B18]/70 via-transparent to-[#0D1B2A]/60" />
+
+            {/* Center card (larger) */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-44 md:w-52 h-20 md:h-24 bg-[#0D1B2A]/85 border border-[#00D4AA]/30 rounded-2xl px-5 py-3 backdrop-blur-md flex items-center justify-center z-10">
+              <p className="text-white text-base md:text-lg font-bold text-center leading-tight">
                 TECHNOLOGY
                 <br />
                 SOLUTIONS
-              </span>
+              </p>
             </div>
-            {/* Orbit nodes */}
+
+            {/* Corner info nodes (CONSULT moved to top-left) */}
             {[
-              { label: "CONSULT", sub: "Strategy & Advisory", pos: "top-4 left-1/2 -translate-x-1/2" },
-              { label: "DEVELOP", sub: "Build & Integrate", pos: "bottom-4 left-4" },
-              { label: "DEPLOY", sub: "Launch & Scale", pos: "top-4 right-4" },
-              { label: "SUPPORT", sub: "Optimize & Evolve", pos: "bottom-4 right-4" },
+              { label: "CONSULT", sub: "Strategy & Advisory", pos: "top-6 left-6" },
+              { label: "DEVELOP", sub: "Build & Integrate", pos: "bottom-6 left-6" },
+              { label: "DEPLOY", sub: "Launch & Scale", pos: "top-6 right-6" },
+              { label: "SUPPORT", sub: "Optimize & Evolve", pos: "bottom-6 right-6" },
             ].map((node) => (
               <div
                 key={node.label}
-                className={`absolute ${node.pos} bg-[#0D1B2A] border border-[#00D4AA]/30 rounded-lg px-3 py-2 text-center`}
+                className={`absolute ${node.pos} bg-[#0D1B2A]/95 border border-[#00D4AA]/30 rounded-lg px-3 py-2 text-center max-w-[160px] z-20`}
               >
-                <p className="text-[#00D4AA] text-xs font-bold">{node.label}</p>
-                <p className="text-gray-400 text-[10px]">{node.sub}</p>
+                <p className="text-[#00D4AA] text-xs md:text-sm font-bold">{node.label}</p>
+                <p className="text-gray-300 text-[10px] md:text-xs">{node.sub}</p>
               </div>
             ))}
           </div>

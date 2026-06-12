@@ -1,10 +1,13 @@
 import { Card } from '@heroui/react'
 import React from 'react'
-
+import { MdOutlineBuild, MdOutlineLanguage, MdOutlinePhoneAndroid, MdOutlineScreenshotMonitor } from "react-icons/md";
+import { SiPaloaltosoftware } from "react-icons/si";
+import { FaCloudUploadAlt, FaRobot, FaUserShield } from "react-icons/fa";
+import { TbSettingsCog } from "react-icons/tb";
 
 const services = [
   {
-    icon: "💡",
+    icon: <MdOutlineScreenshotMonitor />,
     title: "Technology Consulting",
     description:
       "Strategic guidance to help you make the right technology decisions and achieve measurable outcomes.",
@@ -16,7 +19,7 @@ const services = [
     ],
   },
   {
-    icon: "⚙️",
+    icon: <SiPaloaltosoftware />,
     title: "Custom Software Development",
     description:
       "Scalable, secure and high-performance software tailored to your unique business requirements.",
@@ -28,7 +31,7 @@ const services = [
     ],
   },
   {
-    icon: "📱",
+    icon: <MdOutlinePhoneAndroid />,
     title: "Mobile App Development",
     description:
       "Native & cross-platform mobile apps for iOS & Android that deliver exceptional user experiences.",
@@ -40,7 +43,7 @@ const services = [
     ],
   },
   {
-    icon: "🌐",
+    icon: <MdOutlineLanguage/>,
     title: "Web & SaaS Development",
     description:
       "Modern, responsive and high-performing web applications that drive growth and engagement.",
@@ -52,7 +55,7 @@ const services = [
     ],
   },
   {
-    icon: "🤖",
+    icon: <FaRobot />,
     title: "AI & Automation Solutions",
     description:
       "Intelligent solutions that automate processes, improve efficiency and drive innovation.",
@@ -64,7 +67,7 @@ const services = [
     ],
   },
   {
-    icon: "☁️",
+    icon: <FaCloudUploadAlt />,
     title: "Cloud Solutions",
     description:
       "Scalable cloud infrastructure and services to ensure reliability, security and cost efficiency.",
@@ -76,7 +79,7 @@ const services = [
     ],
   },
   {
-    icon: "🔒",
+    icon: <FaUserShield />,
     title: "Cybersecurity Solutions",
     description:
       "Advanced security solutions to protect your data, systems and digital assets.",
@@ -88,7 +91,7 @@ const services = [
     ],
   },
   {
-    icon: "🛠️",
+    icon: <TbSettingsCog/>,
     title: "Maintenance & Support",
     description:
       "24/7 support and maintenance to ensure your systems run smoothly and efficiently.",
@@ -123,7 +126,7 @@ const ServicesSection = () => {
               className="border border-white/10 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
             >
               <Card className="p-5">
-                <div className="w-11 h-11 rounded-xl bg-[#00D4AA]/10 flex items-center justify-center text-2xl mb-4 group-hover:bg-[#00D4AA]/20 transition">
+                <div className="w-11 h-11 rounded-xl bg-[#00D4AA]/10 flex items-center justify-center text-2xl text-white/80 mb-4 group-hover:bg-[#00D4AA]/20 transition">
                   {service.icon}
                 </div>
                 <h3 className="text-white font-bold text-base mb-2">

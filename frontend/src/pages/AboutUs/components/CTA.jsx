@@ -1,9 +1,9 @@
-import { Button } from '@heroui/react'
-import React from 'react'
+import { Button } from '@heroui/react';
+import React from 'react';
+import { FaCalendarAlt, FaPhoneAlt, FaWhatsapp } from 'react-icons/fa';
 
 const CTA = () => {
   return (
-    <>
     <section className="bg-gradient-to-r from-[#020B18] to-purple-950 py-14 px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
         <div>
@@ -16,30 +16,30 @@ const CTA = () => {
         </div>
         <div className="flex flex-wrap gap-3 flex-shrink-0">
           <Button
-            className="bg-white text-black font-semibold px-5 py-4 rounded-xl hover:bg-gray-100 transition"
+            className="bg-white text-black font-semibold px-5 py-4 rounded-xl hover:bg-gray-100 transition flex items-center gap-2"
             size="md"
           >
-            📅 Book Free Consultation
+            <FaCalendarAlt className="text-black" />
+            Book Free Consultation
           </Button>
           <Button
-            className="bg-black/20 border border-white/30 text-white font-semibold px-5 py-4 rounded-xl hover:bg-black/30 transition"
+            className="bg-black/20 border border-white/30 text-white font-semibold px-5 py-4 rounded-xl hover:bg-black/30 transition flex items-center gap-2"
             size="md"
           >
-            📞 Call 0222678253
+            <FaPhoneAlt className="text-white" />
+            Make a Call
           </Button>
           <Button
-            className="bg-green-600 text-white font-semibold px-5 py-4 rounded-xl hover:bg-green-700 transition"
+            className="bg-green-600 text-white font-semibold px-5 py-4 rounded-xl hover:bg-green-700 transition flex items-center gap-2"
             size="md"
           >
-            💬 WhatsApp 03420372875
+            <FaWhatsapp className="text-white" />
+            WhatsApp
           </Button>
         </div>
       </div>
     </section>
+  );
+};
 
-  
-    </>
-  )
-}
-
-export default CTA
+export default CTA;

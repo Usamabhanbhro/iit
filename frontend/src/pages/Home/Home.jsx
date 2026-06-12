@@ -6,165 +6,46 @@ import {
   Input,
   Link,
 } from "@heroui/react";
+
+import { FaCloud, FaMobileAlt, FaCloudUploadAlt, FaPaintBrush, FaRobot, FaChartLine, FaCode, FaDatabase, FaShieldAlt } from 'react-icons/fa';
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Home_HeroSection from "./components/Home_HeroSection";
+import Stats from "./components/Stats";
+import CTA from "./components/CTA";
+import Projects from "./components/Projects";
+import Services from "./components/Services";
+import TechStack from "./components/TechStack";
+import Trusted from "./components/Trusted";
+import WhyChooseUs from "./components/WhyChooseUs";
+import ConsultingBanner from "./components/ConsultingBanner";
+import CaseStudies from "./components/CaseStudies";
+import Testimonials from "./components/Testimonials";
 
 const Home = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
       <Home_HeroSection/>
-
+      <Trusted/>
     
 
-      {/* ========== TRUSTED COMPANIES ========== */}
-      <section className="py-12 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm font-semibold text-gray-500 uppercase tracking-wider mb-8">
-            Trusted by leading companies
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 text-gray-400">
-            <p className="text-2xl font-bold text-gray-300">TechCorp</p>
-            <p className="text-2xl font-bold text-gray-300">InnovateX</p>
-            <p className="text-2xl font-bold text-gray-300">DataFlow</p>
-            <p className="text-2xl font-bold text-gray-300">CloudNine</p>
-            <p className="text-2xl font-bold text-gray-300">NexGen</p>
-          </div>
-        </div>
-      </section>
 
-      {/* ========== SERVICES SECTION ========== */}
-      <section id="services" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <Chip color="primary" variant="flat" size="sm" className="mb-4">
-              What We Offer
-            </Chip>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Services
-            </h2>
-            <p className="text-gray-600 text-lg">
-              End-to-end technology solutions tailored to your business needs
-            </p>
-          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Web Development",
-                desc: "Custom web applications built with modern frameworks and best practices.",
-                icon: "🌐",
-                color: "bg-blue-50",
-                border: "border-blue-200",
-              },
-              {
-                title: "Mobile Apps",
-                desc: "Native and cross-platform mobile applications for iOS and Android.",
-                icon: "📱",
-                color: "bg-green-50",
-                border: "border-green-200",
-              },
-              {
-                title: "Cloud Solutions",
-                desc: "Scalable cloud infrastructure and migration services.",
-                icon: "☁️",
-                color: "bg-purple-50",
-                border: "border-purple-200",
-              },
-              {
-                title: "UI/UX Design",
-                desc: "User-centered design that drives engagement and conversions.",
-                icon: "🎨",
-                color: "bg-pink-50",
-                border: "border-pink-200",
-              },
-              {
-                title: "AI & Machine Learning",
-                desc: "Intelligent automation and data-driven solutions.",
-                icon: "🤖",
-                color: "bg-yellow-50",
-                border: "border-yellow-200",
-              },
-              {
-                title: "IT Consulting",
-                desc: "Strategic technology consulting to accelerate your digital transformation.",
-                icon: "💡",
-                color: "bg-indigo-50",
-                border: "border-indigo-200",
-              },
-            ].map((service, i) => (
-              <Card
-                key={i}
-                className={`border-2 ${service.border} ${service.color} hover:shadow-lg hover:-translate-y-1 transition-all duration-300`}
-                shadow="none"
-                radius="lg"
-              >
-                  <div className="p-6">
-                  <span className="text-4xl mb-4 block">{service.icon}</span>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600">{service.desc}</p>
-                  </div>
-                  <div className="pt-0 px-6 pb-6">
-                  <Button
-                    as={Link}
-                    href="/services"
-                    variant="light"
-                    color="primary"
-                    size="sm"
-                    endContent={
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                        <polyline points="12 5 19 12 12 19" />
-                      </svg>
-                    }
-                  >
-                    Learn More
-                  </Button>
-                  </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ========== STATS SECTION ========== */}
-      <section className="py-20 bg-gradient-to-r from-indigo-600 to-purple-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[
-              { value: "200+", label: "Clients" },
-              { value: "500+", label: "Projects" },
-              { value: "50+", label: "Team Members" },
-              { value: "4.9", label: "Rating" },
-            ].map((stat, i) => (
-              <div key={i}>
-                <p className="text-4xl md:text-5xl font-extrabold text-white mb-2">
-                  {stat.value}
-                </p>
-                <p className="text-indigo-200 text-lg font-medium">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ========== ABOUT / FEATURES ========== */}
-      <section id="about" className="py-20 bg-white">
+      <Services/>
+      <ConsultingBanner/>
+      <WhyChooseUs/>
+      <Projects/>
+      <TechStack/>
+      <CaseStudies/>
+      <Testimonials/>
+      <CTA/>
+      
+    
+      
+{/* ========== ABOUT / FEATURES ========== */}
+      {/* <section id="about" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
@@ -265,10 +146,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* ========== CTA SECTION ========== */}
-      <section className="py-20 bg-gray-50">
+
+      
+      {/* <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Ready to Transform Your Business?
@@ -300,7 +182,7 @@ const Home = () => {
             No spam. Unsubscribe anytime.
           </p>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>

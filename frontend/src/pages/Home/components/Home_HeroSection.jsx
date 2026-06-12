@@ -1,237 +1,183 @@
 import { Button } from '@heroui/react'
 import React from 'react'
+import { FaBriefcase, FaRobot, FaCloud, FaMobileAlt, FaCog } from 'react-icons/fa';
+
 
 const Home_HeroSection = () => {
   return (
     <>
       {/* ========== HERO SECTION ========== */}
-      <section className="relative overflow-hidden bg-[#020B18]">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="space-y-8">
-              <div className="inline-flex items-center gap-2 bg-[#00D4AA]/10 border border-[#00D4AA]/20 rounded-full px-4 py-1.5 mb-5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00D4AA] animate-pulse" />
-                <span className="text-[#00D4AA] text-xs font-semibold uppercase tracking-widest">
-                  Trusted Software Development & Technology Consulting Company
-                </span>
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-white leading-tight">
-                We build Technology that <span className="text-cyan-500">helps business grow</span>  Faster, Operate Smarter, and lead their industry
-              </h1>
-              <p className="text-lg md:text-xl text-gray-300 max-w-lg">
-                Technify dekivers end to end software development and technology consulting services that transform ideas into intelligent scalable and secure digitalsolutions that drive real business results.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button
-                  href="/consultation"
-                  size="lg"
-                  radius="full"
-                  className="font-semibold px-8 py-4 bg-gradient-to-r from-cyan-400 to-purple-600 text-white rounded-2xl shadow-lg flex items-center gap-2"
-                >
-                  Book Free Consultation
-                  <span className="text-lg">→</span>
-                </Button>
-                <Button
-                  href="#work"
-                  size="lg"
-                  radius="full"
-                  className="font-semibold px-8 py-4 bg-slate-900/60 text-white border border-white hover:bg-slate-800 rounded-2xl shadow-lg flex items-center gap-2"
-                >
-                  View Our Work
-                  <span className="text-lg">→</span>
-                </Button>
-              </div>
+      <section className="relative overflow-hidden bg-[#020B18] min-h-screen flex items-center">
+        {/* Glow Effects */}
+        <div className="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-[radial-gradient(ellipse,_rgba(59,130,246,0.12)_0%,_transparent_70%)] rounded-full pointer-events-none" />
+        <div className="absolute bottom-[10%] left-[5%] w-[400px] h-[400px] bg-[radial-gradient(ellipse,_rgba(99,102,241,0.1)_0%,_transparent_70%)] rounded-full pointer-events-none" />
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 pt-6">
-                <div className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-green-500 text-xl"></i>
-                  <span className="text-sm font-semibold text-white">Technology Consulting</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-green-500 text-xl"></i>
-                  <span className="text-sm font-semibold text-white">Custom Software</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-green-500 text-xl"></i>
-                  <span className="text-sm font-semibold text-white">Mobile Apps</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-green-500 text-xl"></i>
-                  <span className="text-sm font-semibold text-white">Cloud Solutions</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-green-500 text-xl"></i>
-                  <span className="text-sm font-semibold text-white">AI & Automations</span>
-                </div>
-
-              </div>
-
-              {/* LOWER 5 BOXES */}
-              <div className="fiveBoxes flex gap-3 border border-gray-700 rounded-lg p-6 mt-8 bg-slate-800/50 w-fit">
-                <div className="flex items-center gap-4 bg-transparent">
-                  <div className="flex-shrink-0">
-                    <i className="fa-regular fa-file text-purple-300 text-3xl"></i>
-                  </div>
-
-                  <div>
-                    <h1 className="text-3xl md:text-4xl font-bold text-white">150+</h1>
-                    <p className="text-sm text-gray-300 font-light">Projects Delivered</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 bg-transparent">
-                  <div className="flex-shrink-0">
-                    <i className="fa-solid fa-shield text-purple-300 text-3xl"></i>
-                  </div>
-
-                  <div>
-                    <h1 className="text-3xl md:text-4xl font-bold text-white">98%</h1>
-                    <p className="text-sm text-gray-300 font-light">Client Satisfaction</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 bg-transparent">
-                  <div className="flex-shrink-0">
-                    <i className="fa-solid fa-user text-purple-300 text-3xl"></i>
-                  </div>
-
-                  <div>
-                    <h1 className="text-3xl md:text-4xl font-bold text-white">30+</h1>
-                    <p className="text-sm text-gray-300 font-light">Active Cients</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 bg-transparent">
-                  <div className="flex-shrink-0">
-                    <i className="fa-solid fa-clock text-purple-300 text-3xl"></i>
-                  </div>
-
-                  <div>
-                    <h1 className="text-3xl md:text-4xl font-bold text-white">24/7</h1>
-                    <p className="text-sm text-gray-300 font-light">Support Available</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 bg-transparent">
-                  <div className="flex-shrink-0">
-                    <i className="fa-solid fa-calendar text-purple-300 text-3xl"></i>
-                  </div>
-
-                  <div>
-                    <h1 className="text-3xl md:text-4xl font-bold text-white">5+</h1>
-                    <p className="text-sm text-gray-300 font-light">Years of Excellence</p>
-                  </div>
-                </div>
-
-
-
-              </div>
-
-
-
+        <div className="max-w-7xl mx-auto px-6 py-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* LEFT CONTENT */}
+          <div>
+            {/* badge */}
+            <div className="inline-flex items-center gap-2 bg-[#00D4AA]/10 border border-[#00D4AA]/20 rounded-full px-4 py-1.5 mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00D4AA] animate-pulse" />
+              <span className="text-[#00D4AA] text-[10px] md:text-xs font-bold uppercase tracking-widest">
+                Trusted Software Development &amp; Technology Consulting Company
+              </span>
             </div>
 
-            {/* Right Content - Hero Image/Illustration */}
-            <div className="hidden md:flex justify-center relative">
-              <div className="relative">
-                <div className="w-80 h-80 md:w-96 md:h-96 bg-gradient-to-br from-indigo-400 to-purple-600 rounded-3xl rotate-6 shadow-2xl flex items-center justify-center">
-                  <div className="absolute inset-0 bg-white/10 rounded-3xl"></div>
-                  <div className="relative z-10 text-white text-center p-8">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="80"
-                      height="80"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mx-auto mb-4 opacity-80"
-                    >
-                      <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                      <path d="M2 17l10 5 10-5" />
-                      <path d="M2 12l10 5 10-5" />
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight mb-5">
+              We Build Technology That{" "}
+              <span className="bg-[#00D4AA] bg-clip-text text-transparent">
+                Helps Businesses Grow
+              </span>{" "}
+              Faster, Operate Smarter, and Lead Their Industry
+            </h1>
+
+            <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-8 max-w-xl">
+              Technify delivers end-to-end software development and technology consulting services that transform ideas into intelligent, scalable and secure digital solutions that drive real business results.
+            </p>
+
+            {/* Buttons */}
+            <div className="flex flex-wrap gap-4 mb-8">
+              <Button
+                href="/consultation"
+                size="lg"
+                radius="full"
+                className="font-bold px-8 py-4 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-xl text-white shadow shadow-[#00D4AA]/25 flex items-center gap-2 hover:brightness-110 transition"
+              >
+                Book Free Consultation
+                <span>→</span>
+              </Button>
+              <Button
+                href="#work"
+                size="lg"
+                radius="full"
+                className="font-semibold px-8 py-4 bg-white/5 text-white border rounded-xl border-white/20 hover:bg-white/10 transition flex items-center gap-2"
+              >
+                View Our Work
+                <span>→</span>
+              </Button>
+            </div>
+
+            {/* Checks */}
+            <div className="flex flex-wrap gap-x-6 gap-y-3 mb-10">
+              {["Technology Consulting", "Custom Software", "Mobile Apps", "Cloud Solutions", "AI & Automations"].map(t => (
+                <div key={t} className="flex items-center gap-2">
+                  <span className="w-[18px] h-[18px] rounded-full bg-green-500/15 flex items-center justify-center">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
+                      <polyline points="2,6 5,9 10,3" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round" />
                     </svg>
-                    <p className="text-2xl font-bold">Innovate</p>
-                    <p className="text-indigo-200">with confidence</p>
+                  </span>
+                  <span className="text-white text-sm font-semibold">{t}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Stats bar - Fixed */}
+            <div className="w-full mt-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 border border-gray-700 rounded-xl p-5 bg-slate-800/50">
+                {/* Stat 1 */}
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0">
+                    <i className="fa-regular fa-file text-purple-300 text-2xl md:text-3xl"></i>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">150+</h3>
+                    <p className="text-xs text-gray-300">Projects Delivered</p>
                   </div>
                 </div>
-                {/* Floating card decoration */}
-                <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-lg p-4 rotate-[-6deg]">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="#16a34a"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-sm font-bold text-gray-900">150+</p>
-                      <p className="text-xs text-gray-500">Projects Done</p>
-                    </div>
+
+                {/* Stat 2 */}
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0">
+                    <i className="fa-solid fa-shield text-purple-300 text-2xl md:text-3xl"></i>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">98%</h3>
+                    <p className="text-xs text-gray-300">Client Satisfaction</p>
                   </div>
                 </div>
-              </div>
 
-              {/* Floating contact container (right side) */}
-              {/* Floating Contact Pill — Right Side of Hero */}
-              <div className="flex flex-col items-center gap-2 bg-[#0D1B2A]/90 border border-white/10 rounded-2xl px-3 py-2 shadow-2xl backdrop-blur-sm">
-
-                {/* Call Us */}
-                <a href="tel:+920222678253" className="flex flex-col items-center gap-1.5 group">
-                  <div className="w-11 h-11 rounded-full bg-[#1a2a3a] border border-white/10 flex items-center justify-center group-hover:border-[#00D4AA]/50 group-hover:bg-[#00D4AA]/10 transition-all duration-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="currentColor">
-                      <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z" />
-                    </svg>
+                {/* Stat 3 */}
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0">
+                    <i className="fa-solid fa-user text-purple-300 text-2xl md:text-3xl"></i>
                   </div>
-                  <span className="text-white text-[10px] font-medium">Call Us</span>
-                </a>
-
-                {/* Divider */}
-                <div className="w-6 h-px bg-white/10" />
-
-                <a href="https://wa.me/923420372875" target="_blank" rel="noreferrer" className="flex flex-col items-center gap-1.5 group">
-                  <div className="w-11 h-11 rounded-full bg-green-500 flex items-center justify-center group-hover:bg-green-400 group-hover:scale-105 transition-all duration-200 shadow-lg shadow-green-500/30">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="currentColor">
-                      <path d="M20.52 3.48A11.94 11.94 0 0012 0C5.373 0 .001 5.373.001 12a11.93 11.93 0 001.66 6.04L0 24l6.12-1.6A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12 0-3.2-1.25-6.18-3.48-8.52zM12 21.6a9.6 9.6 0 01-4.96-1.34l-.35-.21-3.64.95.97-3.56-.22-.36A9.6 9.6 0 1121.6 12 9.61 9.61 0 0112 21.6zm5.2-7.4c-.28-.14-1.67-.82-1.93-.92s-.45-.14-.64.14-.73.92-.9 1.1-.33.2-.61.07a7.84 7.84 0 01-2.28-1.41 8.5 8.5 0 01-1.58-1.97c-.17-.28 0-.43.13-.57s.28-.33.42-.5a1.84 1.84 0 00.28-.47.52.52 0 000-.5c-.07-.14-.64-1.53-.87-2.1s-.46-.47-.64-.48h-.54a1.05 1.05 0 00-.76.36 3.2 3.2 0 00-1 2.38 5.55 5.55 0 001.16 2.95c.14.18 1.93 2.95 4.68 4.13a15.77 15.77 0 001.56.58 3.76 3.76 0 001.73.11c.53-.08 1.62-.66 1.85-1.3s.23-1.18.16-1.3-.25-.18-.53-.32z" />
-                    </svg>
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">30+</h3>
+                    <p className="text-xs text-gray-300">Active Clients</p>
                   </div>
-                  <span className="text-white text-[10px] font-medium">WhatsApp</span>
-                </a>
+                </div>
 
-                {/* Divider */}
-                <div className="w-6 h-px bg-white/10" />
-
-                {/* Email Us */}
-                <a href="mailto:info@technifyltd.com" className="flex flex-col items-center gap-1.5 group">
-                  <div className="w-11 h-11 rounded-full bg-indigo-500 flex items-center justify-center group-hover:bg-indigo-400 group-hover:scale-105 transition-all duration-200 shadow-lg shadow-indigo-500/30">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="currentColor">
-                      <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                    </svg>
+                {/* Stat 4 */}
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0">
+                    <i className="fa-solid fa-clock text-purple-300 text-2xl md:text-3xl"></i>
                   </div>
-                  <span className="text-white text-[10px] font-medium">Email Us</span>
-                </a>
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">24/7</h3>
+                    <p className="text-xs text-gray-300">Support Available</p>
+                  </div>
+                </div>
 
+                {/* Stat 5 */}
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0">
+                    <i className="fa-solid fa-calendar text-purple-300 text-2xl md:text-3xl"></i>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">5+</h3>
+                    <p className="text-xs text-gray-300">Years of Excellence</p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div >
-        </div >
+          </div>
 
-        {/* Decorative elements */}
-        < div className="absolute top-20 right-10 w-64 h-64 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" ></div >
-        <div className="absolute bottom-20 left-10 w-64 h-64 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-      </section >
+          {/* RIGHT CONTENT - 3D Visual */}
+          <div className="relative flex justify-center items-center">
+            {/* Main orb */}
+            <div className="relative w-[340px] h-[340px] md:w-[420px] md:h-[420px]">
+              <div className="w-full h-full bg-[radial-gradient(ellipse_at_40%_35%,_rgba(59,130,246,0.25)_0%,_rgba(99,102,241,0.15)_40%,_rgba(2,11,24,0)_70%)] rounded-full absolute top-0 left-0 animate-pulse" />
+
+              {/* Center glowing circle */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160px] h-[160px] md:w-[180px] md:h-[180px] bg-[radial-gradient(circle,_rgba(59,130,246,0.4)_0%,_rgba(99,102,241,0.2)_50%,_transparent_70%)] rounded-full shadow-[0_0_60px_rgba(59,130,246,0.5),_0_0_120px_rgba(99,102,241,0.3)]">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 rounded-full bg-[radial-gradient(circle,_#60a5fa_0%,_#818cf8_100%)] shadow-[0_0_30px_rgba(96,165,250,0.8)]" />
+              </div>
+
+              {/* Orbiting service cards */}
+            import { FaBriefcase, FaRobot, FaCloud, FaMobileAlt, FaCog } from 'react-icons/fa';
+
+// ... inside your component
+{[
+  { label: "Consulting", icon: <FaBriefcase className="text-sm text-[#00D4AA]" />, angle: 0, r: 130 },
+  { label: "AI Solutions", icon: <FaRobot className="text-sm text-[#00D4AA]" />, angle: 72, r: 130 },
+  { label: "Cloud Systems", icon: <FaCloud className="text-sm text-[#00D4AA]" />, angle: 144, r: 130 },
+  { label: "Mobile Apps", icon: <FaMobileAlt className="text-sm text-[#00D4AA]" />, angle: 216, r: 130 },
+  { label: "Custom Software", icon: <FaCog className="text-sm text-[#00D4AA]" />, angle: 288, r: 130 },
+].map(({ label, icon, angle, r }) => {
+  const rad = (angle - 90) * Math.PI / 180;
+  const x = 170 + r * Math.cos(rad) - 48;
+  const y = 170 + r * Math.sin(rad) - 20;
+  return (
+    <div
+      key={label}
+      className="absolute bg-[#0D1B2A]/90 border border-white/10 rounded-xl px-3 py-2 flex items-center gap-2 backdrop-blur-md shadow-2xl"
+      style={{ left: `${x}px`, top: `${y}px` }}
+    >
+      <span className="flex items-center">{icon}</span>
+      <span className="text-white text-[10px] font-bold whitespace-nowrap">{label}</span>
+    </div>
+  );
+})}
+
+              {/* Ring */}
+              <svg className="absolute top-0 left-0 w-full h-full opacity-15" viewBox="0 0 420 420">
+                <circle cx="210" cy="210" r="155" stroke="#3B82F6" strokeWidth="1" fill="none" strokeDasharray="8 6" />
+                <circle cx="210" cy="210" r="115" stroke="#6366F1" strokeWidth="1" fill="none" strokeDasharray="4 8" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

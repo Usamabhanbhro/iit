@@ -1,12 +1,13 @@
 import React from 'react'
+import { FaUsers, FaBullseye, FaClock, FaCheckCircle, FaChartLine, FaHandsHelping } from 'react-icons/fa'
 
 const values = [
-  { icon: "👥", title: "Expert Team", desc: "Skilled professionals with vast experience in latest technologies." },
-  { icon: "🎯", title: "Client-Centric Approach", desc: "We prioritize your business goals and deliver solutions that matter." },
-  { icon: "⏰", title: "On-Time Delivery", desc: "Agile methodology and transparent communication ensure timely delivery." },
-  { icon: "✅", title: "Quality Assurance", desc: "Strict quality standards and testing to deliver bug-free solutions." },
-  { icon: "📈", title: "Scalable Solutions", desc: "Built to scale with your business and adapt to future needs." },
-  { icon: "🤝", title: "Long-Term Partnership", desc: "We build relationships that test and grow together." },
+  { icon: <FaUsers className="text-3xl md:text-4xl text-[#00D4AA]" />, title: "Expert Team", desc: "Skilled professionals with vast experience in latest technologies." },
+  { icon: <FaBullseye className="text-3xl md:text-4xl text-[#00D4AA]" />, title: "Client-Centric Approach", desc: "We prioritize your business goals and deliver solutions that matter." },
+  { icon: <FaClock className="text-3xl md:text-4xl text-[#00D4AA]" />, title: "On-Time Delivery", desc: "Agile methodology and transparent communication ensure timely delivery." },
+  { icon: <FaCheckCircle className="text-3xl md:text-4xl text-[#00D4AA]" />, title: "Quality Assurance", desc: "Strict quality standards and testing to deliver bug-free solutions." },
+  { icon: <FaChartLine className="text-3xl md:text-4xl text-[#00D4AA]" />, title: "Scalable Solutions", desc: "Built to scale with your business and adapt to future needs." },
+  { icon: <FaHandsHelping className="text-3xl md:text-4xl text-[#00D4AA]" />, title: "Long-Term Partnership", desc: "We build relationships that test and grow together." },
 ];
 
 const Value = () => {
