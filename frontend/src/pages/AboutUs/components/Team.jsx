@@ -3,8 +3,8 @@ import React from 'react';
 
 const team = [
   {
-    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg", // professional man in suit
-    name: "Imran Sheikh",
+    image: "sir_rafique.jpg", // professional man in suit
+    name: "Rafique Ahmed Bhutto",
     role: "Chief Executive Officer",
     desc: "Visionary leader with expertise in business strategy, technology innovation, and building high-performance teams.",
   },

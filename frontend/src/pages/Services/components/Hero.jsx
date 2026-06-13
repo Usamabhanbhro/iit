@@ -6,7 +6,7 @@ const Hero = () => {
 <>
     <section className="relative bg-[#020B18] overflow-hidden min-h-[480px] flex items-center">
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
         {/* Left */}
         <div>
           <p className="text-[#00D4AA] text-sm font-semibold uppercase tracking-widest mb-3">

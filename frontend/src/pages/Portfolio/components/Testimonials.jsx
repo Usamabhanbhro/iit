@@ -85,18 +85,7 @@ const Testimonials = () => {
               ))}
             </div>
     
-            {/* Dots */}
-            <div className="flex justify-center gap-2 mt-8">
-              {testimonials.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActive(i)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    active === i ? "w-8 bg-[#00D4AA]" : "w-2 bg-white/20"
-                  }`}
-                />
-              ))}
-            </div>
+           
           </div>
         </section>
     </>

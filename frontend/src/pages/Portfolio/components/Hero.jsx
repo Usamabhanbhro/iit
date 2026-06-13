@@ -5,7 +5,7 @@ import React from 'react'
 const Hero = () => {
   return (
     <>
-    <section className="relative bg-[#020B18] overflow-hidden py-20 px-6">
+    <section className="relative bg-[#020B18] overflow-hidden py-8 px-6">
           {/* Grid bg */}
           <div className="absolute inset-0 opacity-10"/>
           
