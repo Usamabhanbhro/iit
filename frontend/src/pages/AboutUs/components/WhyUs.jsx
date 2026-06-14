@@ -34,12 +34,15 @@ const whyUs = [
   },
 ];
 
+// Duplicate the array to create a seamless loop
+const marqueeWhyUs = [...whyUs, ...whyUs];
+
 const WhyUs = () => {
   return (
-    <section className="bg-slate-900 py-20 px-6">
+    <section className="bg-slate-900 py-20 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <p className="text-green-500 text-xs font-semibold uppercase tracking-widest mb-2">
+          <p className="text-green-500 text-md font-semibold uppercase tracking-widest mb-2">
             Why Businesses Trust Technify
           </p>
           <h2 className="text-white text-3xl md:text-4xl font-bold">
@@ -47,21 +50,43 @@ const WhyUs = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-          {whyUs.map((w) => (
-            <div
-              key={w.title}
-              className="bg-slate-800 border flex-col border-white/10 rounded-2xl p-5 text-center hover:border-green-500/40 hover:-translate-y-1 transition-all duration-200 group"
-            >
-              <div className="w-11 h-11 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-green-500/20 transition">
-                {w.icon}
+        {/* Horizontal marquee (right → left) */}
+        <div className="relative overflow-hidden w-full">
+          <div className="marquee inline-flex gap-4">
+            {marqueeWhyUs.map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-slate-800 border border-white/10 rounded-2xl p-5 text-center hover:border-green-500/40 hover:-translate-y-1 transition-all duration-200 group w-56 flex-shrink-0"
+              >
+                <div className="w-11 h-11 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-green-500/20 transition">
+                  {item.icon}
+                </div>
+                <h4 className="text-white font-semibold text-xs mb-2">{item.title}</h4>
+                <p className="text-gray-500 text-[12px] leading-relaxed text-wrap">{item.desc}</p>
               </div>
-              <h4 className="text-white font-semibold text-xs mb-2">{w.title}</h4>
-              <p className="text-gray-500 text-[10px] leading-relaxed">{w.desc}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
+
+      {/* CSS Animation – moves leftwards (right → left) */}
+      <style jsx>{`
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .marquee {
+          animation: marquee 30s linear infinite;
+          white-space: nowrap;
+        }
+        .marquee:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   );
 };

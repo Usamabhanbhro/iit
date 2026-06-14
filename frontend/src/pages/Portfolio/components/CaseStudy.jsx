@@ -40,12 +40,7 @@ const CaseStudy = () => {
                    </div>
                  ))}
                </div>
-               <Button
-                 className="bg-[#00D4AA] text-black font-semibold px-6 py-2 rounded-full hover:brightness-110"
-                 size="md"
-               >
-                 View Full Case Study →
-               </Button>
+              
              </div>
    
              {/* Right – mini dashboard */}

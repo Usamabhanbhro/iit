@@ -1,5 +1,7 @@
 import { Button } from '@heroui/react';
 import React from 'react'
+import { Link } from 'react-router-dom';
+import BookConsultationButton from '../../components/BookConsultationButton';
 
 const Hero = () => {
   return (
@@ -32,24 +34,14 @@ const Hero = () => {
               competitive in an ever-changing digital world.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button
-                href="/consultation"
-                size="lg"
-                radius="full"
-                className="font-semibold px-8 py-4 bg-gradient-to-r from-cyan-400 to-purple-600 text-white rounded-2xl shadow-lg flex items-center gap-2"
-              >
-                Book Free Consultation
-                <span className="text-lg">→</span>
-              </Button>
-              <Button
-                href="#work"
-                size="lg"
-                radius="full"
-                className="font-semibold px-8 py-4 bg-slate-900/60 text-white border border-white hover:bg-slate-800 rounded-2xl shadow-lg flex items-center gap-2"
-              >
-                View Our Work
-                <span className="text-lg">→</span>
-              </Button>
+              <BookConsultationButton/>
+
+              <Link to="/portfolio">
+                <Button className="inline-flex items-center font-semibold px-8 py-4 bg-white/5 text-white border rounded-xl border-white/20 hover:bg-white/10 transition">
+                  View Our Work
+                  <span className="ml-2">→</span>
+                </Button>
+              </Link>
             </div>
           </div>
 
@@ -62,20 +54,13 @@ const Hero = () => {
                 <div className="relative h-48 overflow-hidden">
                   {/* Background image via img tag — covers the full area */}
                   <img
-                    src="/technify.png"
+                    src="/technify2.png"
                     alt="Technify logo"
                     className="absolute inset-0 w-full h-full object-cover object-center"
                     onError={(e) => { e.target.style.display = 'none' }}
                   />
 
-                  {/* Dark overlay */}
-                  <div className="absolute inset-0 bg-black/60" />
 
-                  {/* Text on top — centered */}
-                  <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4">
-                    <span className="text-white font-bold text-lg drop-shadow-md">Technify</span>
-                    <span className="text-[#00D4AA] text-xs drop-shadow">Innovate. Integrate. Implement.</span>
-                  </div>
                 </div>
 
                 {/* Stats row (unchanged) */}

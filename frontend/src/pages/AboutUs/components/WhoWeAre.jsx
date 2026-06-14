@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBullseye, FaEye, FaGem, FaPlay } from 'react-icons/fa';
+import { FaBullseye, FaEye, FaGem } from 'react-icons/fa';
 
 const mvv = [
   {
@@ -25,35 +25,20 @@ const mvv = [
 const WhoWeAre = () => {
   return (
     <section className="bg-white py-20 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-        {/* Left – video thumbnail mock */}
-        <div className="relative">
-          <div className="bg-gradient-to-br from-gray-900 to-[#0D1B2A] rounded-2xl overflow-hidden aspect-video flex items-center justify-center shadow-2xl">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="grid grid-cols-4 gap-2 opacity-20 w-full h-full p-4">
-                {[...Array(16)].map((_, i) => (
-                  <div key={i} className="bg-[#00D4AA] rounded opacity-30" />
-                ))}
-              </div>
-            </div>
-            <div className="relative z-10 flex flex-col items-center gap-3">
-              <div className="w-16 h-16 rounded-full bg-white/10 border-2 border-white/30 flex items-center justify-center">
-                <FaPlay className="text-white text-2xl ml-0.5" />
-              </div>
-              <span className="text-white font-bold text-xl">Technify</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Right – text */}
-        <div>
-          <p className="text-green-600 text-xs font-semibold uppercase tracking-widest mb-3">
+      <div className="max-w-5xl mx-auto">
+        {/* Centered heading */}
+        <div className="text-center mb-12">
+          <p className="text-[#00D4AA] text-lg font-bold uppercase tracking-widest mb-3">
             Who We Are
           </p>
-          <h2 className="text-gray-900 text-3xl font-bold leading-tight mb-5">
+          <h2 className="text-gray-900 text-3xl md:text-4xl font-bold leading-tight">
             A Team of Innovators, Problem Solvers & Technology Experts
           </h2>
-          <div className="space-y-4 text-gray-600 text-sm leading-relaxed mb-8">
+        </div>
+
+        {/* Description text - centered and narrower */}
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
             <p>
               Technify is a technology consulting and software development company committed
               to delivering innovative, scalable, and secure digital solutions.
@@ -68,33 +53,33 @@ const WhoWeAre = () => {
               create measurable results.
             </p>
           </div>
+        </div>
 
-          {/* MVV cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {mvv.map((item) => (
-              <div
-                key={item.title}
-                className="border border-gray-100 rounded-2xl p-4 hover:shadow-md transition-shadow"
-              >
-                <div className={`w-10 h-10 rounded-xl ${item.iconBg} flex items-center justify-center text-xl mb-3`}>
-                  {item.icon}
-                </div>
-                <h4 className="text-gray-900 font-bold text-sm mb-2">{item.title}</h4>
-                {item.desc ? (
-                  <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
-                ) : (
-                  <div className="grid grid-cols-2 gap-x-2 gap-y-1">
-                    {item.values.map((v) => (
-                      <div key={v} className="flex items-center gap-1">
-                        <span className="text-[#00D4AA] text-[10px]">✔</span>
-                        <span className="text-gray-500 text-xs">{v}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
+        {/* MVV cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          {mvv.map((item) => (
+            <div
+              key={item.title}
+              className="border border-gray-100 rounded-2xl p-5 hover:shadow-lg transition-all duration-300 bg-white"
+            >
+              <div className={`w-12 h-12 rounded-xl ${item.iconBg} flex items-center justify-center text-xl mb-4`}>
+                {item.icon}
               </div>
-            ))}
-          </div>
+              <h4 className="text-gray-900 font-bold text-base mb-2">{item.title}</h4>
+              {item.desc ? (
+                <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
+              ) : (
+                <div className="grid grid-cols-2 gap-x-3 gap-y-2 mt-2">
+                  {item.values.map((v) => (
+                    <div key={v} className="flex items-center gap-1.5">
+                      <span className="text-[#00D4AA] text-xs">✓</span>
+                      <span className="text-gray-600 text-xs">{v}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </section>

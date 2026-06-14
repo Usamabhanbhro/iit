@@ -111,7 +111,7 @@ const ServicesSection = () => {
     <section className="bg-[#020B18]  py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
-          <p className="text-[#00D4AA] text-sm font-semibold uppercase tracking-widest mb-2">
+          <p className="text-[#00D4AA] text-md font-semibold uppercase tracking-widest mb-2">
             What We Offer
           </p>
           <h2 className="text-white text-3xl md:text-4xl font-bold">
@@ -143,9 +143,7 @@ const ServicesSection = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="text-[#00D4AA] text-sm font-semibold hover:underline">
-                  Learn More →
-                </button>
+            
               </Card>
             </Card>
           ))}

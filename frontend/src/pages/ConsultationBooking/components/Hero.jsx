@@ -8,6 +8,7 @@ import {
   FaWhatsapp,
   FaArrowRight 
 } from 'react-icons/fa';
+import BookConsultationButton from '../../components/BookConsultationButton';
 
 const benefits = [
   { icon: <FaShieldAlt className="text-[#00D4AA] text-lg" />, title: "No Obligation", sub: "100% Free Consultation" },
@@ -50,12 +51,7 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-wrap gap-4">
-            <Button
-              className="bg-[#00D4AA] text-black font-semibold px-6 py-4 rounded-xl hover:brightness-110 transition flex items-center gap-2"
-              size="lg"
-            >
-              Book Free Consultation <FaArrowRight className="text-black" />
-            </Button>
+           <BookConsultationButton/>
             <Button
               variant="bordered"
               className="border-white/30 text-white px-6 py-4 border border-white/10 rounded-xl hover:bg-white/10 transition flex items-center gap-2"

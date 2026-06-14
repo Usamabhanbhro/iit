@@ -12,7 +12,6 @@ import { FaCloud, FaMobileAlt, FaCloudUploadAlt, FaPaintBrush, FaRobot, FaChartL
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Home_HeroSection from "./components/Home_HeroSection";
-import Stats from "./components/Stats";
 import CTA from "./components/CTA";
 import Projects from "./components/Projects";
 import Services from "./components/Services";

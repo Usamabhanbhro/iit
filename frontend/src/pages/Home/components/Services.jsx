@@ -47,7 +47,7 @@ const Services = () => {
           icon: <FaRobot className="w-8 h-8 md:w-10 md:h-10" />,
         },
         {
-          title: "IT Consulting",
+          title: "IT Consulting Services",
           desc: "Strategic technology consulting to accelerate your digital transformation.",
           icon: <FaChartLine className="w-8 h-8 md:w-10 md:h-10" />,
         },
@@ -62,7 +62,7 @@ const Services = () => {
           icon: <FaDatabase className="w-8 h-8 md:w-10 md:h-10" />,
         },
         {
-          title: "Cybersecurity",
+          title: "Cybersecurity Solutions",
           desc: "Security audits, penetration testing, and compliance.",
           icon: <FaShieldAlt className="w-8 h-8 md:w-10 md:h-10" />,
         },

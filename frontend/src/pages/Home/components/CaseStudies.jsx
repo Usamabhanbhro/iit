@@ -29,9 +29,7 @@ const CaseStudies = () => {
               </div>
             ))}
           </div>
-          <button className="mt-6 bg-white/5 border border-white/15 text-white rounded-lg px-6 py-3 text-sm font-semibold hover:bg-white/10 transition">
-            View All Case Studies →
-          </button>
+      
         </div>
 
         {/* Right – image card with proper sizing */}

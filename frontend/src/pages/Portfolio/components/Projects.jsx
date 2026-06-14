@@ -166,9 +166,7 @@ const Projects = () => {
                 <p className="text-gray-400 text-xs leading-relaxed mb-4">
                   {project.desc}
                 </p>
-                <button className="text-[#00D4AA] text-xs font-semibold hover:underline">
-                  View Case Study →
-                </button>
+              
               </div>
             </Card>
           ))}

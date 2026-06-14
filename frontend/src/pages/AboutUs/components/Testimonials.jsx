@@ -1,5 +1,4 @@
-import { Card } from '@heroui/react';
-import React, { useState } from 'react';
+import React from 'react';
 
 const testimonials = [
   {
@@ -25,11 +24,12 @@ const testimonials = [
   },
 ];
 
-const Testimonials = () => {
-  const [active, setActive] = useState(0);
+// Duplicate testimonials for seamless looping
+const marqueeTestimonials = [...testimonials, ...testimonials, ...testimonials];
 
+const Testimonials = () => {
   return (
-    <section className="bg-white py-20 px-6">
+    <section className="bg-white py-20 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <p className="text-green-500 text-xs font-semibold uppercase tracking-widest mb-2">
@@ -40,50 +40,71 @@ const Testimonials = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <Card
-              key={t.name}
-              className="cursor-pointer bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-            >
-              <div className="p-6">
-                {/* Stars */}
-                <div className="flex gap-0.5 mb-4">
-                  {Array.from({ length: 5 }).map((_, j) => (
-                    <span key={j} className={j < t.stars ? "text-yellow-400" : "text-gray-300"}>
-                      ★
-                    </span>
-                  ))}
-                </div>
-                {/* Quote */}
-                <div className="relative mb-6">
-                  <span className="absolute -top-1 -left-1 text-[#00D4AA]/20 text-4xl font-serif leading-none">"</span>
-                  <p className="text-gray-700 text-sm leading-relaxed pt-3">{t.text}</p>
-                </div>
-                {/* Author with image */}
-                <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                  <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-gray-200">
-                    <img
-                      src={t.image}
-                      alt={t.name}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = 'https://via.placeholder.com/80x80?text=User';
-                      }}
-                    />
+        {/* Horizontal marquee (right → left) */}
+        <div className="relative overflow-hidden w-full">
+          <div className="marquee inline-flex gap-6">
+            {marqueeTestimonials.map((t, idx) => (
+              <div
+                key={idx}
+                className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 w-80 md:w-96 flex-shrink-0"
+              >
+                <div className="p-6">
+                  {/* Stars */}
+                  <div className="flex gap-0.5 mb-4">
+                    {Array.from({ length: 5 }).map((_, j) => (
+                      <span key={j} className={j < t.stars ? "text-yellow-400" : "text-gray-300"}>
+                        ★
+                      </span>
+                    ))}
                   </div>
-                  <div>
-                    <p className="text-black text-sm font-semibold">{t.name}</p>
-                    <p className="text-gray-600 text-xs">{t.role}</p>
+                  {/* Quote */}
+                  <div className="relative mb-6">
+                    <span className="absolute -top-1 -left-1 text-[#00D4AA]/20 text-4xl font-serif leading-none">"</span>
+                    <p className="text-gray-700 text-sm leading-relaxed pt-3 text-wrap">{t.text}</p>
+                  </div>
+                  {/* Author with image */}
+                  <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
+                    <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-gray-200">
+                      <img
+                        src={t.image}
+                        alt={t.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = 'https://via.placeholder.com/80x80?text=User';
+                        }}
+                      />
+                    </div>
+                    <div>
+                      <p className="text-black text-sm font-semibold">{t.name}</p>
+                      <p className="text-gray-600 text-xs">{t.role}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </Card>
-          ))}
+            ))}
+          </div>
         </div>
-        
       </div>
+
+      {/* CSS Animation – right to left (moves leftwards) */}
+      <style jsx>{`
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-33.33%);
+          }
+        }
+        .marquee {
+          animation: marquee 40s linear infinite;
+          white-space: nowrap;
+        }
+        .marquee:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   );
 };

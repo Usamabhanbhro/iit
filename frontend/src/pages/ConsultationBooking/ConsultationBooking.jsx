@@ -20,7 +20,7 @@ const ConsultationBooking = () => {
       <Hero />
       <Offerings />
       <Bookings />
-      <Consultation/>
+      {/* <Consultation/> */}
       <Process />
       <Testimonials />
       <CTA />

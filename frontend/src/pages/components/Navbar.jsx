@@ -57,12 +57,12 @@ const Navbar = () => {
         <div className="hidden sm:flex items-center gap-4">
           <a href="tel:+022212345" className="inline-flex items-center gap-2 text-white hover:text-gray-200">
             <i className="fa-solid fa-phone text-white font-sm"></i>
-            <span className="text-sm">022212345</span>
+            <span className="text-sm">Call us now</span>
           </a>
 
           <a href="https://wa.me/923219997774" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-white hover:text-gray-200">
             <i className="fa-brands fa-whatsapp text-green-500 text-xl"></i>
-            <span className="text-sm">03219997774</span>
+            <span className="text-sm">Whatsapp</span>
           </a>
 
           {/* ✅ React Router Link used here */}

@@ -1,6 +1,9 @@
 import { Button } from '@heroui/react';
 import React from 'react';
 import { FaCalendarAlt, FaPhoneAlt, FaWhatsapp } from 'react-icons/fa';
+import BookConsultationButton from '../../components/BookConsultationButton';
+import WhatsappButton from '../../components/WhatsappButton';
+import CallUsButton from '../../components/CallUsButton';
 
 const CTA = () => {
   return (
@@ -15,27 +18,10 @@ const CTA = () => {
           </p>
         </div>
         <div className="flex flex-wrap gap-3 flex-shrink-0">
-          <Button
-            className="bg-white text-black font-semibold px-5 py-4 rounded-xl hover:bg-gray-100 transition flex items-center gap-2"
-            size="md"
-          >
-            <FaCalendarAlt className="text-black" />
-            Book Free Consultation
-          </Button>
-          <Button
-            className="bg-black/20 border border-white/30 text-white font-semibold px-5 py-4 rounded-xl hover:bg-black/30 transition flex items-center gap-2"
-            size="md"
-          >
-            <FaPhoneAlt className="text-white" />
-            Make a Call
-          </Button>
-          <Button
-            className="bg-green-600 text-white font-semibold px-5 py-4 rounded-xl hover:bg-green-700 transition flex items-center gap-2"
-            size="md"
-          >
-            <FaWhatsapp className="text-white" />
-            WhatsApp
-          </Button>
+          <BookConsultationButton/>
+          <CallUsButton/>
+          <WhatsappButton/>
+          
         </div>
       </div>
     </section>
