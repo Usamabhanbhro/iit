@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
@@ -6,6 +6,7 @@ import DashboardContent from './components/DashboardContent';
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navigate = useNavigate();
 
   const [recentBookings, setRecentBookings] = useState([]);
@@ -96,17 +97,19 @@ const Dashboard = () => {
     },
   ];
 
-  React.useEffect(() => {
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+  const closeSidebar = () => setIsSidebarOpen(false);
+
+  useEffect(() => {
     const fetchBookings = async () => {
       try {
-        const token = localStorage.getItem('token'); // assuming auth token
+        const token = localStorage.getItem('token');
         const res = await fetch('http://localhost:5000/api/bookings', {
           headers: {
             'Authorization': `Bearer ${token}`
           }
         });
         if (res.status === 401) {
-          // token invalid or expired — clear and redirect to login
           localStorage.removeItem('token');
           navigate('/admin/login');
           return;
@@ -151,7 +154,6 @@ const Dashboard = () => {
     }
   };
 
-
   const getStatusColor = (status) => {
     switch (status?.toLowerCase()) {
       case 'accepted': return 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20';
@@ -163,14 +165,18 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen flex bg-[#020B18] font-sans text-white overflow-hidden selection:bg-rose-500/30">
-      
       {/* Sidebar */}
-      <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+      <Sidebar 
+        activeTab={activeTab} 
+        setActiveTab={setActiveTab} 
+        isOpen={isSidebarOpen} 
+        onClose={closeSidebar} 
+      />
 
       {/* Main Content */}
       <main className="relative z-10 flex-1 flex flex-col h-screen overflow-y-auto custom-scrollbar">
         {/* Header */}
-        <Header activeTab={activeTab} />
+        <Header activeTab={activeTab} toggleSidebar={toggleSidebar} />
 
         {/* Dashboard Content */}
         <DashboardContent
@@ -182,8 +188,6 @@ const Dashboard = () => {
           handleStatusUpdate={handleStatusUpdate}
         />
       </main>
-
-      
     </div>
   );
 };
