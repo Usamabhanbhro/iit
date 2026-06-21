@@ -191,8 +191,8 @@ ADMIN_PASSWORD=
 |PORT	|Server port (default: 5000)|
 |MONGODB_URI |	MongoDB connection string|
 |JWT_SECRET |	Secret key for JWT authentication|
-|EMAIL_USER |	Email address for sending notifications|
-|EMAIL_PASS |	App-specific password for email|
+|ADMIN_EMAIL|	Email address for sending notifications|
+|ADMIN_PASSWORD |	App-specific password for email|
 |CLIENT_URL |	Frontend URL for CORS|
 
 ## 📄 Pages Breakdown
