@@ -115,14 +115,7 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-bold text-sm mb-4">Contact Info</h4>
             <div className="space-y-2 mb-5">
-              <div className="flex items-center gap-2 text-gray-400 text-sm">
-                <FaPhoneAlt className="text-[#00D4AA] text-xs" />
-                <span>0222678253</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-400 text-sm">
-                <FaWhatsapp className="text-green-500 text-xs" />
-                <span>03420372875 (WhatsApp 24/7)</span>
-              </div>
+            
               <div className="flex items-center gap-2 text-gray-400 text-sm">
                 <FaEnvelope className="text-[#00D4AA] text-xs" />
                 <span>info@technifyltd.com</span>

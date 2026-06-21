@@ -106,10 +106,7 @@ const Hero = () => {
                   ))}
                 </div>
               </div>
-              {/* Floating badge */}
-              <div className="absolute -top-4 -right-4 bg-[#00D4AA] text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg">
-                Live Preview ✓
-              </div>
+         
             </div>
           </div>
         </div>

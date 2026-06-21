@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBullseye, FaEye, FaGem } from 'react-icons/fa';
+import { FaBullseye, FaEye, FaGem, FaHandshake } from 'react-icons/fa';
 
 const mvv = [
   {
@@ -20,24 +20,27 @@ const mvv = [
     title: "Our Values",
     values: ["Innovation", "Integrity", "Excellence", "Collaboration", "Customer Success", "Continuous Improvement"],
   },
+  {
+    icon: <FaHandshake className="text-orange-400 text-xl" />,
+    iconBg: "bg-orange-500/10",
+    title: "Our Promise",
+    desc: "We commit to delivering exceptional quality, transparent communication, and lasting partnerships that drive measurable business outcomes.",
+  },
 ];
 
 const WhoWeAre = () => {
   return (
     <section className="bg-white py-20 px-6">
-      <div className="max-w-5xl mx-auto">
-        {/* Centered heading */}
-        <div className="text-center mb-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        
+        {/* LEFT – Paragraph Section */}
+        <div>
           <p className="text-[#00D4AA] text-lg font-bold uppercase tracking-widest mb-3">
             Who We Are
           </p>
-          <h2 className="text-gray-900 text-3xl md:text-4xl font-bold leading-tight">
+          <h2 className="text-gray-900 text-3xl md:text-4xl font-bold leading-tight mb-6">
             A Team of Innovators, Problem Solvers & Technology Experts
           </h2>
-        </div>
-
-        {/* Description text - centered and narrower */}
-        <div className="max-w-3xl mx-auto text-center mb-12">
           <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
             <p>
               Technify is a technology consulting and software development company committed
@@ -55,8 +58,8 @@ const WhoWeAre = () => {
           </div>
         </div>
 
-        {/* MVV cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {/* RIGHT – Cards Section (4 cards, 2 columns) */}
+        <div className="grid grid-cols-2 gap-6">
           {mvv.map((item) => (
             <div
               key={item.title}
