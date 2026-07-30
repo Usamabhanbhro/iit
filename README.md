@@ -1,6 +1,3 @@
-Here is the complete, updated README.md file tailored specifically for your **IIT Website** repository (Usamabhanbhro/iit), with all placeholders filled in and the custom footer added.
-Copy and paste the code below directly into your README.md file:
-```markdown
 # ⚛️ IIT Website
 
 A modern, responsive React application built for the IIT project using web development best practices.
