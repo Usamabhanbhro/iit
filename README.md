@@ -1,13 +1,16 @@
-# ⚛️ IIT WEBSITE 
+Here is the complete, updated README.md file tailored specifically for your **IIT Website** repository (Usamabhanbhro/iit), with all placeholders filled in and the custom footer added.
+Copy and paste the code below directly into your README.md file:
+```markdown
+# ⚛️ IIT Website
 
-A modern, responsive React application built with best practices.
+A modern, responsive React application built for the IIT project using web development best practices.
 
 ---
 
 ## 🚀 Features
 
 - ⚡ Fast and lightweight
-- 📱 Responsive design
+- 📱 Fully responsive across all devices
 - 🛠️ Built with React & modern JavaScript
 
 ---
@@ -28,12 +31,12 @@ Follow these steps to get a local copy up and running on your computer.
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/Usamabhanbhro/iit.git
+git clone [https://github.com/Usamabhanbhro/iit.git](https://github.com/Usamabhanbhro/iit.git)
 
 ```
 ### 2. Navigate into the project folder
 ```bash
-cd your-repo-name
+cd iit
 
 ```
 ### 3. Install dependencies
@@ -46,10 +49,10 @@ npm install
 npm start
 
 ```
-*(If your project uses Vite, use npm run dev instead)*
+*(If the project uses Vite, run npm run dev instead)*
 Open http://localhost:3000 (or the port shown in your terminal) to view it in your browser.
 ## 🚀 How to Deploy to GitHub Pages
-You can easily host and deploy this React app online for free using GitHub Pages.
+Host and deploy this React app online for free using GitHub Pages.
 ### Step 1: Install the gh-pages package
 Run the following command in your terminal:
 ```bash
@@ -57,10 +60,10 @@ npm install gh-pages --save-dev
 
 ```
 ### Step 2: Configure package.json
-Open your package.json file and make two quick additions:
- 1. Add a homepage property at the top level:
+Open your package.json file and make the following additions:
+ 1. Add the homepage property at the top level:
    ```json
-   "homepage": "[https://your-username.github.io/your-repo-name](https://your-username.github.io/your-repo-name)",
+   "homepage": "[https://Usamabhanbhro.github.io/iit](https://Usamabhanbhro.github.io/iit)",
    
    ```
  2. Add deployment commands under the "scripts" section:
@@ -80,19 +83,19 @@ Open your package.json file and make two quick additions:
      }
      
      ```
-*(If you are using Vite, also update vite.config.js to set base: '/your-repo-name/')*
+*(Note: If using Vite, also ensure vite.config.js sets base: '/iit/')*
 ### Step 3: Deploy the app
 Run the deploy command in your terminal:
 ```bash
 npm run deploy
 
 ```
-This will automatically build your project and push it to a gh-pages branch on GitHub.
+This automatically builds your project and pushes it to the gh-pages branch on GitHub.
 ### Step 4: Verify GitHub Settings
- 1. Go to your repository on GitHub.
+ 1. Go to **github.com/Usamabhanbhro/iit** on GitHub.
  2. Click **Settings** \rightarrow **Pages**.
  3. Under **Source**, select Deploy from a branch and choose the gh-pages branch.
- 4. Your live app will be accessible at https://your-username.github.io/your-repo-name!
+ 4. Your live site will be accessible at: **https://Usamabhanbhro.github.io/iit**
 ## 📂 Project Structure
 ```text
 ├── public/          # Static assets
@@ -104,13 +107,9 @@ This will automatically build your project and push it to a gh-pages branch on G
 ```
 ## 📜 License
 This project is licensed under the MIT License - see the LICENSE file for details.
+<p align="center">
+Made with ❤️ by <b>Usama Bhanbhro</b> for the 🌍
+</p>
 ```
-
----
-
-> **Tip:** Replace placeholders like `your-username` and `your-repo-name` with your actual GitHub username and repository name before saving!
-
-For a visual step-by-step walkthrough of deploying a React app built with Vite directly to GitHub Pages, check out this video tutorial: [How to Deploy a React Vite App to GitHub Pages](https://www.youtube.com/watch?v=5gSBLvZ8MH8).
-http://googleusercontent.com/youtube_content/1
 
 ```
