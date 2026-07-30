@@ -1,4 +1,4 @@
-# ⚛️ React Application
+# ⚛️ IIT WEBSITE
 
 A modern, responsive React application built with best practices.
 
